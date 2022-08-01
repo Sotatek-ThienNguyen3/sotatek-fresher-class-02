@@ -1,14 +1,30 @@
-import { Button, Link, Paper, TextField, Typography } from "@mui/material";
-import React from "react";
+import {
+  Button,
+  Link,
+  Paper,
+  SvgIcon,
+  TextField,
+  Typography,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { ReactComponent as IconPasswordInput } from "../assets/icon-password-input.svg";
+import { useLogin } from "../hooks/useLogin";
 
 export default function Login() {
-  console.log("Hello Login page");
+  const {
+    email,
+    password,
+    handleOnChangeEmail,
+    handleOnChangePassword,
+    showPassword,
+    setShowPassword,
+  } = useLogin();
 
   return (
     <div
       style={{
         display: "flex", // inline css
-        backgroundColor: "gray",
+        // backgroundColor: "gray",
       }}
     >
       <div
@@ -16,35 +32,9 @@ export default function Login() {
           display: "flex",
           flexDirection: "column",
           flex: 1,
-          backgroundColor: "cyan",
           alignItems: "center",
-          // justifyContent: "center",
         }}
-      >
-        <div
-          style={{
-            backgroundColor: "red",
-          }}
-        >
-          <h2>item 1</h2>
-        </div>
-
-        <div
-          style={{
-            backgroundColor: "green",
-          }}
-        >
-          <h2>item 2</h2>
-        </div>
-
-        <div
-          style={{
-            backgroundColor: "blue",
-          }}
-        >
-          <h2>item 3</h2>
-        </div>
-      </div>
+      ></div>
       <div
         style={{
           flex: 1,
@@ -73,11 +63,36 @@ export default function Login() {
             </Link>
           </Typography>
           <Typography fontSize={14}>Email address</Typography>
-          <TextField style={{ width: "100%" }}></TextField>
+          <TextField
+            style={{ width: "100%" }}
+            value={email}
+            onChange={handleOnChangeEmail}
+          ></TextField>
           <br></br>
           <br></br>
           <Typography fontSize={14}>Password</Typography>
-          <TextField style={{ width: "100%" }}></TextField>
+          <TextField
+            style={{ width: "100%" }}
+            value={password}
+            onChange={handleOnChangePassword}
+            type={showPassword ? "text" : "password"}
+            InputProps={{
+              endAdornment: (
+                <Button
+                  style={{
+                    height: 25,
+                    width: 25,
+                    backgroundColor: "white",
+                  }}
+                  onClick={() => {
+                    setShowPassword(!showPassword);
+                  }}
+                >
+                  <SvgIcon component={IconPasswordInput} inheritViewBox />
+                </Button>
+              ),
+            }}
+          ></TextField>
           <br></br>
           <br></br>
           <Button
