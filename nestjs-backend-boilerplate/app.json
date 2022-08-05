@@ -1,0 +1,142 @@
+{
+  "apps": [
+    {
+      "name": "sota-dex-balance-history",
+      "script": "yarn",
+      "args": "console:dev account:daily-balance",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-be",
+      "script": "yarn",
+      "args": "run start:dev",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-index",
+      "script": "yarn",
+      "args": "console:dev start-get-index-price",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-get-funding-rate",
+      "script": "yarn",
+      "args": "console:dev start-get-funding-rate",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-notifier",
+      "script": "yarn",
+      "args": "console:dev matching-engine:notify",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-accounts",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-accounts",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-positions",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-positions",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-orders",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-orders",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-trades",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-trades",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-transactions",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-transactions",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-position-histories",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-position-histories",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-funding",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-funding",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-matching-engine-save-margin-histories",
+      "script": "yarn",
+      "args": "console:dev matching-engine:save-margin-histories",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-orderbook",
+      "script": "yarn",
+      "args": "console:dev orderbook:publish",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-ticker-publisher",
+      "script": "yarn",
+      "args": "console:dev ticker:publish",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-transaction-crawler",
+      "script": "dist/console.js",
+      "args": "transaction:crawl-deposit",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-candle-sync-trades",
+      "script": "yarn",
+      "args": "console:dev candles:sync-trades",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-candle-sync-candles",
+      "script": "yarn",
+      "args": "console:dev candles:sync-candles",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    {
+      "name": "sota-dex-action",
+      "script": "dist/console.js",
+      "args": "dex:action"
+    },
+    {
+      "name": "sota-dex-action-picker",
+      "script": "dist/console.js",
+      "args": "dex:action-picker"
+    },
+    {
+      "name": "sota-dex-action-sender",
+      "script": "dist/console.js",
+      "args": "dex:action-sender"
+    },
+    {
+      "name": "sota-dex-action-verifier",
+      "script": "dist/console.js",
+      "args": "dex:action-verifier"
+    },
+    {
+      "name": "sota-dex-action-history",
+      "script": "dist/console.js",
+      "args": "dex:action-history"
+    },
+    {
+      "name": "sota-dex-action-balance-checker",
+      "script": "dist/console.js",
+      "args": "dex:action-balance-checker"
+    }
+  ]
+}

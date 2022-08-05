@@ -1,0 +1,54 @@
+app:
+  node_env: NODE_ENV
+  name: APP_NAME
+  port: APP_PORT
+  prefix: APP_PREFIX
+  jwt_access_token_secret: JWT_ACCESS_TOKEN_SECRET
+  jwt_access_token_expiration_time: JWT_ACCESS_TOKEN_EXPIRATION_TIME
+  jwt_refresh_token_secret: JWT_REFRESH_TOKEN_SECRET
+  jwt_refresh_token_expiration_time: JWT_REFRESH_TOKEN_EXPIRATION_TIME
+
+master:
+  type: mysql
+  host: MYSQL_HOST
+  port: MYSQL_PORT
+  username: MYSQL_USERNAME
+  password: MYSQL_PASSWORD
+  database: MYSQL_DATABASE
+  logging:
+    __name: MYSQL_LOG
+    __format: json
+  extra:
+    __name: MYSQL_EXTRA
+    __format: json
+
+report:
+  type: mysql
+  host: REPORT_MYSQL_HOST
+  port: REPORT_MYSQL_PORT
+  username: REPORT_MYSQL_USERNAME
+  password: REPORT_MYSQL_PASSWORD
+  database: REPORT_MYSQL_DATABASE
+  logging:
+    __name: REPORT_MYSQL_LOG
+    __format: json
+  extra:
+    __name: REPORT_MYSQL_EXTRA
+    __format: json
+
+redis:
+  host: REDIS_HOST
+  port: REDIS_PORT
+
+kafka:
+  brokers: KAFKA_BROKERS
+
+sentry_dns: SENTRY_DNS
+
+mail:
+  account: MAIL_ACCOUNT
+  password: MAIL_PASSWORD
+  from: MAIL_FROM
+  service: MAIL_SERVICE
+  domain: MAIL_DOMAIN
+  enable: MAIL_ENABLE

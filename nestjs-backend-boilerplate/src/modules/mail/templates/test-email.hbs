@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      width: 668px;
+      height: 536px;
+      margin: 0;
+      line-height: 28px;
+      font-family: 'Roboto';
+      font-size: 18px;
+      line-height: 27px;
+      background-color: white;
+    }
+
+
+    .email-content {
+      padding: 48px 56px;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 45px;
+      color: #555770;
+      margin-bottom: 24px;
+      margin-top: 0px;
+    }
+
+    .sotadex-img {
+      width: 100%;
+      max-height: 200px;
+    }
+
+    p {
+      color: #555770;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 150%;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .btn-verify {
+      padding: 7px 24px 8px 24px;
+      color: #FFFFFF;
+      background-color: #3E7BFA;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header><img class="sotadex-img" src="{{ bannerLink }}" /></header>
+<div class="email-content">
+  <h3 class="title">Confirm Your Registration</h3>
+  <p>Welcome to SotaDex!</p>
+  <p>Email: {{email}}</p>
+  <p>
+    Test content: {{content}}
+  </p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.25
+    container_name: mineraland-mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --sql_mode="" --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: '1'
+      MYSQL_DATABASE: mineraland
+      MYSQL_USER: 'mineraland'
+      MYSQL_PASSWORD: '1'
+      LANG: C.UTF-8
+    ports:
+      - 3311:3306
+
+  redis:
+    image: 'redis:6-alpine'
+    container_name: mineraland-redis
+    ports:
+      - 6382:6379
+
+  zookeeper:
+    image: 'bitnami/zookeeper:3.6.2'
+    container_name: mineraland-zookeeper
+    ports:
+      - 2190:2181
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  kafka:
+    image: 'bitnami/kafka:2.6.0'
+    container_name: mineraland-kafka
+    ports:
+      - 9100:9100
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9100
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://localhost:9100
+      - KAFKA_INTER_BROKER_LISTENER_NAME=CLIENT
+      - KAFKA_CFG_REPLICA_FETCH_MAX_BYTES=10485760
+      - KAFKA_CFG_MESSAGE_MAX_BYTES=10485760
+    depends_on:
+      - zookeeper
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    container_name: mineraland-kafdrop
+    restart: "no"
+    ports:
+      - "9001:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "kafka:9092"
+      JVM_OPTS: "-Xms160M -Xmx480M -Xss1800K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+    depends_on:
+      - "kafka"
