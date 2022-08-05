@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as IconPasswordInput } from "../assets/icon-password-input.svg";
 import { useLogin } from "../hooks/useLogin";
 
-export default function Login() {
+export default function Login(props: any) {
   const {
     email,
     password,
@@ -34,7 +34,9 @@ export default function Login() {
           flex: 1,
           alignItems: "center",
         }}
-      ></div>
+      >
+        {/* <h1>{props.data.value}</h1> */}
+      </div>
       <div
         style={{
           flex: 1,
