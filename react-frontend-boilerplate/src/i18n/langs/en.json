@@ -1,0 +1,14 @@
+{
+    "title": "This is a project showing how to use react-i18n",
+    "test": {
+        "a": "England"
+    },
+    "hihi": "dsadas",
+    "description": {
+        "teacher": "Le Tuan Thanh",
+        "student": "Dao Danh Luu",
+        "classmate": {
+            "name": "Thanh"
+        }
+    }
+}
