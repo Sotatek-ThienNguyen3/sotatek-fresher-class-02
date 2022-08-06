@@ -6,9 +6,11 @@ import { UserService } from 'src/modules/user/user.service';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
+
   @Get('/me')
   async getMe() {
-    const data = this.userService.getMe();
+    const userId = 10;
+    const data = this.userService.getUserById(userId);
     return data;
   }
 }

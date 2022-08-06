@@ -27,6 +27,7 @@ async function bootstrap(): Promise<void> {
     environment: appEnv,
   });
 
+
   app.setGlobalPrefix(prefix);
   app.enableCors();
   app.useGlobalInterceptors(new SentryInterceptor());

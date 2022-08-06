@@ -14,3 +14,6 @@ export class UserRepository extends Repository<UserEntity> {
     } else return null;
   }
 }
+
+
+// Repository.find(UserEntity, {id: 1})
