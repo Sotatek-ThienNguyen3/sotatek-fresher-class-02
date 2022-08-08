@@ -7,7 +7,7 @@ export class QueueProcessor {
   @Process(QUEUE_TOPIC.EMAIL_SEND)
   async processMail(jobData: Job) {
     console.log('Receive data from queue');
-    console.log('job data', jobData);
+    console.log('job data', jobData.data);
     // processing
     console.log('Done process data from queue');
     return;
