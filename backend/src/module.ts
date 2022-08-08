@@ -1,6 +1,8 @@
+import { BullModule } from '@nestjs/bull';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from 'src/model/entities/user.entity';
 import { PhotoModule } from 'src/modules/photo/photo.module';
+import { QueueModule } from 'src/modules/queue/queue.module';
 import { UserModule } from 'src/modules/user/user.module';
 
 export const Modules = [
@@ -14,6 +16,13 @@ export const Modules = [
     entities: [UserEntity],
     synchronize: true,
   }),
+  BullModule.forRoot({
+    redis: {
+      host: process.env.REDIS_HOST,
+      port: parseInt(process.env.REDIS_PORT),
+    },
+  }),
   UserModule,
   PhotoModule,
+  QueueModule,
 ];
